@@ -7,21 +7,24 @@
 if [ "${CLAUDE_CODE_REMOTE:-}" = "true" ]; then
     echo "=== Remote Environment Setup ==="
 
+    # Refresh package cache once if either tool is missing (required on fresh containers)
+    if ! command -v jq >/dev/null 2>&1 || ! command -v python3 >/dev/null 2>&1; then
+        apt-get update >/dev/null 2>&1
+    fi
+
     # jq is used by validate-commit.sh, validate-assets.sh, and agent audit hooks
     if ! command -v jq >/dev/null 2>&1; then
         echo "Installing jq..."
         apt-get install -y jq >/dev/null 2>&1 || echo "WARNING: jq install failed — hook validation will be degraded"
-    else
-        echo "jq: $(jq --version)"
     fi
+    command -v jq >/dev/null 2>&1 && echo "jq: $(jq --version)"
 
     # python3 is used for JSON validation in commit and asset hooks
     if ! command -v python3 >/dev/null 2>&1; then
         echo "Installing python3..."
         apt-get install -y python3 >/dev/null 2>&1 || echo "WARNING: python3 install failed — JSON validation will be skipped"
-    else
-        echo "python3: $(python3 --version)"
     fi
+    command -v python3 >/dev/null 2>&1 && echo "python3: $(python3 --version 2>&1)"
 
     echo "=== Remote Setup Complete ==="
     echo ""
