@@ -1,8 +1,31 @@
 #!/bin/bash
-# Claude Code SessionStart hook: Load project context at session start
-# Outputs context information that Claude sees when a session begins
+# Claude Code SessionStart hook: Remote environment setup + session context
 #
 # Input schema (SessionStart): No stdin input
+
+# --- Remote environment setup (only runs on Claude Code on the web) ---
+if [ "${CLAUDE_CODE_REMOTE:-}" = "true" ]; then
+    echo "=== Remote Environment Setup ==="
+
+    # jq is used by validate-commit.sh, validate-assets.sh, and agent audit hooks
+    if ! command -v jq >/dev/null 2>&1; then
+        echo "Installing jq..."
+        apt-get install -y jq >/dev/null 2>&1 || echo "WARNING: jq install failed — hook validation will be degraded"
+    else
+        echo "jq: $(jq --version)"
+    fi
+
+    # python3 is used for JSON validation in commit and asset hooks
+    if ! command -v python3 >/dev/null 2>&1; then
+        echo "Installing python3..."
+        apt-get install -y python3 >/dev/null 2>&1 || echo "WARNING: python3 install failed — JSON validation will be skipped"
+    else
+        echo "python3: $(python3 --version)"
+    fi
+
+    echo "=== Remote Setup Complete ==="
+    echo ""
+fi
 
 echo "=== Claude Code Game Studios — Session Context ==="
 
