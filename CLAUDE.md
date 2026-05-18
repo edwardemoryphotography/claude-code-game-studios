@@ -3,7 +3,7 @@
 Indie game development managed through **49 coordinated Claude Code subagents**.
 Each agent owns a specific domain, enforcing separation of concerns and quality gates.
 
-> **Stats**: 49 agents · 72 skills · 12 hooks · 11 path-scoped rules · 39 document templates
+> **Stats**: 49 agents · 72 skills · 12 hooks · 8+ path-scoped rules · 39 document templates
 
 ---
 
@@ -46,6 +46,7 @@ CLAUDE.md                           # Master configuration (this file)
   docs/
     workflow-catalog.yaml           # 7-phase pipeline (read by /help)
     templates/                      # 39 document templates
+    *.md                            # Reference docs (agent-roster, skills-reference, hooks-reference, etc.)
 src/                                # Game source code (empty until /start)
 assets/                             # Art, audio, VFX, shaders, data
 design/                             # GDDs, narrative docs, level designs
@@ -99,7 +100,7 @@ Full agent directory and usage guidance: @.claude/docs/agent-roster.md
 ## Slash Commands (72 Skills)
 
 **Onboarding & Navigation**
-`/start` `/help` `/project-stage-detect` `/setup-engine` `/adopt`
+`/start` `/help` `/project-stage-detect` `/setup-engine` `/adopt` `/init`
 
 **Game Design**
 `/brainstorm` `/map-systems` `/design-system` `/quick-design` `/review-all-gdds` `/propagate-design-change`
@@ -159,7 +160,7 @@ Full hook reference: @.claude/docs/hooks-reference.md
 
 ---
 
-## Path-Scoped Coding Rules (11)
+## Path-Scoped Coding Rules
 
 | Path | Enforces |
 |------|----------|
