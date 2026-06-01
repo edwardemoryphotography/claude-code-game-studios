@@ -1,7 +1,7 @@
 ---
 name: scope-check
 description: "Analyze a feature or sprint for scope creep by comparing current scope against the original plan. Flags additions, quantifies bloat, and recommends cuts. Use when user says 'any scope creep', 'scope review', 'are we staying in scope'."
-argument-hint: "[feature-name or sprint-N]"
+argument-hint: "[feature-name | sprint-N | milestone-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash
 model: haiku
@@ -107,6 +107,15 @@ Net change: [+X%] — [On Track / Minor Creep / Significant Creep / Out of Contr
 
 ---
 
+### Rules
+
+- Scope creep is additions without corresponding cuts or timeline extensions
+- Not all additions are bad — some are discovered requirements. But they must be acknowledged and accounted for
+- When recommending cuts, prioritize preserving the core player experience over nice-to-haves
+- Always quantify scope changes — "it feels bigger" is not actionable, "+35% items" is
+
+---
+
 ## Phase 5: Next Steps
 
 After presenting the report, offer concrete follow-up:
@@ -117,12 +126,3 @@ After presenting the report, offer concrete follow-up:
 
 Always end with:
 > "Run `/scope-check [name]` again after cuts are made to verify the verdict improves."
-
----
-
-### Rules
-
-- Scope creep is additions without corresponding cuts or timeline extensions
-- Not all additions are bad — some are discovered requirements. But they must be acknowledged and accounted for
-- When recommending cuts, prioritize preserving the core player experience over nice-to-haves
-- Always quantify scope changes — "it feels bigger" is not actionable, "+35% items" is
