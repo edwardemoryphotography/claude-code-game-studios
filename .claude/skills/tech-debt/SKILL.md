@@ -40,7 +40,13 @@ Categorize each finding:
 - **Dependency Debt**: Outdated packages, deprecated APIs, version conflicts
 - **Performance Debt**: Known slow paths, unoptimized queries, memory issues
 
-Present the findings to the user.
+Present the findings to the user as a structured table:
+
+| ID | Category | File / Location | Indicator | Severity | Est. Effort |
+|----|----------|-----------------|-----------|----------|-------------|
+| TD-nnn | [Category] | [file:line] | TODO / FIXME / god object / etc. | Low / Med / High / Critical | S / M / L / XL |
+
+Include one row per distinct finding. Sort by Severity descending.
 
 Ask: "May I write these findings to `docs/tech-debt-register.md`?"
 
@@ -97,11 +103,6 @@ Output the report to the user. This mode is read-only — no files are written. 
 
 ---
 
-## Phase 3: Next Steps
-
-- Run `/sprint-plan` to schedule high-priority debt items into the next sprint.
-- Run `/tech-debt report` at the start of each sprint to track debt trends over time.
-
 ### Debt Register Format
 
 ```markdown
@@ -119,3 +120,10 @@ Total items: [N] | Estimated total effort: [T-shirt sizes summed]
 - Every debt entry must explain WHY it was accepted (deadline, prototype, missing info)
 - "Scan" should run at least once per sprint to catch new debt
 - Items older than 3 sprints without action should either be fixed or consciously accepted with a documented reason
+
+---
+
+## Phase 3: Next Steps
+
+- Run `/sprint-plan` to schedule high-priority debt items into the next sprint.
+- Run `/tech-debt report` at the start of each sprint to track debt trends over time.
