@@ -42,8 +42,8 @@ Categorize each finding:
 
 Present the findings to the user as a structured table:
 
-| ID | Category | File / Location | Indicator | Severity | Est. Effort |
-|----|----------|-----------------|-----------|----------|-------------|
+| ID | Category | Files | Description | Impact | Effort |
+|----|----------|-------|-------------|--------|--------|
 | TD-nnn | [Category] | [file:line] | TODO / FIXME / god object / etc. | Low / Med / High / Critical | S / M / L / XL |
 
 Include one row per distinct finding. Sort by Severity descending.
