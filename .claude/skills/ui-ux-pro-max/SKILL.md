@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: "UI/UX design intelligence. 67 styles, 96 palettes, 57 font pairings, 25 charts, 13 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient. Integrations: shadcn/ui MCP for component search and examples."
+description: "UI/UX design intelligence. 67 styles, 96 palettes, 57 font pairings, 25 charts, 13 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient. Integrations: 21st.dev Magic MCP (npx @21st-dev/cli@latest install claude --api-key <key>) for live component generation from natural language."
 ---
 # UI/UX Pro Max - Design Intelligence
 
@@ -118,6 +118,41 @@ winget install Python.Python.3.12
 
 ---
 
+## 21st.dev Magic MCP (Optional — Component Generation)
+
+Pair this skill with the **21st.dev Magic MCP** to go from design system → live
+shadcn/ui components in a single step. Magic gives Claude access to a curated
+component library with natural-language generation, TypeScript support, SVGL brand
+assets, and real-time preview.
+
+### Install
+
+```bash
+npx @21st-dev/cli@latest install claude --api-key <your-api-key>
+```
+
+Get your API key at https://21st.dev/magic
+
+### What it adds
+
+| Capability | Without Magic | With Magic |
+|------------|---------------|------------|
+| Design system (colors, fonts, style) | ✅ via search.py | ✅ |
+| Component search | shadcn docs only | ✅ live registry |
+| Generate UI from description | code only | ✅ preview + code |
+| Brand logos / SVGL icons | manual lookup | ✅ built-in |
+
+### Usage after install
+
+```
+/ui "hero section for a SaaS dark-mode dashboard with glassmorphism"
+```
+
+Or naturally in chat — Magic activates automatically on component requests once
+the MCP is running.
+
+---
+
 ## How to Use This Skill
 
 When user requests UI/UX work (design, build, create, implement, review, fix, improve), follow this workflow:
@@ -201,6 +236,22 @@ python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
 ```
 
 Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`
+
+### Step 5: Generate Components with 21st.dev Magic (if installed)
+
+After the design system is set, use Magic to produce ready-to-use components that
+already match the style, colors, and typography selected in Steps 2–4.
+
+```
+/ui "<component description> [style keywords from design system]"
+```
+
+**Example** (continuing the Serenity Spa workflow from Step 2):
+```
+/ui "pricing card with soft pink gradient, elegant serif heading, glassmorphism background, Tailwind"
+```
+
+If Magic is not installed, skip this step and implement from the design system output directly.
 
 ---
 
