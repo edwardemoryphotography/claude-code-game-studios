@@ -109,7 +109,7 @@ Full agent directory and usage guidance: @.claude/docs/agent-roster.md
 `/art-bible` `/asset-spec` `/asset-audit`
 
 **UX & Interface Design**
-`/ux-design` `/ux-review`
+`/ux-design` `/ux-review` `/ui-ux-pro-max`
 
 **Architecture**
 `/create-architecture` `/architecture-decision` `/architecture-review` `/create-control-manifest`

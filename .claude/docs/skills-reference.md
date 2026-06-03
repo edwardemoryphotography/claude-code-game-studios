@@ -29,6 +29,7 @@
 |---------|---------|
 | `/ux-design` | Guided section-by-section UX spec authoring (screen/flow, HUD, or pattern library) |
 | `/ux-review` | Validate UX specs for GDD alignment, accessibility, and pattern compliance |
+| `/ui-ux-pro-max` | Full-stack UI/UX in one skill — spec authoring, integrated review, design tokens, motion spec, dark/light mode variants, responsive breakpoints, component lifecycle, A/B test planning, safe zone mapping, and optional `/team-ui` pipeline handoff |
 
 ## Architecture
 
