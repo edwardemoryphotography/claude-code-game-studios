@@ -469,7 +469,7 @@ Then spawn the `/team-ui` pipeline with the approved spec.
 
 ## 10. Audit Mode (`audit` or `all`)
 
-> Scan all existing UX specs and produce a gap report. No writes in audit mode.
+> Scan all existing UX specs and produce a gap report. No modifications to existing specs in audit mode.
 
 For each file in `design/ux/*.md` (excluding design-tokens.md, motion-spec.md, interaction-patterns.md):
 
@@ -520,7 +520,7 @@ Task: [current section]
 <!-- /STATUS -->
 ```
 
-Recovery: if session is interrupted, read `active.md` and the target spec file. Sections with `[To be designed]` are incomplete; sections with real content are done. Resume from the next incomplete section.
+Recovery: if session is interrupted, read `production/session-state/active.md` and the target spec file. Sections with `[To be designed]` are incomplete; sections with real content are done. Resume from the next incomplete section.
 
 ---
 
