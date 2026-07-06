@@ -1,6 +1,6 @@
 # Available Skills (Slash Commands)
 
-68 slash commands organized by phase. Type `/` in Claude Code to access any of them.
+97 slash commands organized by phase, plus 29 uncataloged general-purpose utility skills (see bottom section). Type `/` in Claude Code to access any of them.
 
 ## Onboarding & Navigation
 
@@ -125,3 +125,49 @@ Coordinate multiple agents on a single feature area:
 | `/team-level` | level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester |
 | `/team-live-ops` | live-ops-designer + economy-designer + community-manager + analytics-engineer |
 | `/team-qa` | qa-lead + qa-tester + gameplay-programmer + producer |
+
+## General-Purpose Agent Utilities (Ported, Uncataloged)
+
+These 29 skills were ported from [davidondrej/skills](https://github.com/davidondrej/skills), a
+personal power-user skill collection. They are **not part of the phase-gated game dev pipeline**
+(`/help` and `/gate-check` ignore them) — they're general Claude Code agent utilities available
+alongside the studio-specific skills above.
+
+**Not ported**: `fable-safe-prompt` was excluded — it's designed to rewrite prompts to evade
+Claude's safety classifiers on cyber/bio content, which this project will not carry.
+
+**Heads up**: several of these reference tools, accounts, or infrastructure specific to the
+original author (his DeepAPI key, his VPS servers, the Pi Agent, cmux, macOS) and will need
+adaptation before they're actually usable in this project's environment.
+
+| Command | Purpose |
+|---------|---------|
+| `/agent-self-scheduling` | Run an agent on a cron/loop/interval — scheduling patterns per agent type |
+| `/cmux` | Control macOS cmux terminal workspaces/panes (macOS-only app) |
+| `/codex-goal-loop` | Write prompts for OpenAI Codex's `/goal` autonomous agent loop |
+| `/delegating-to-agents` | How to route work between Codex/Pi/Claude Code/Hermes agents |
+| `/handoff` | Compact a session into a copy-pasteable handoff for a fresh agent |
+| `/markdown-rendering` | Workaround for a cmux-specific blank-render bug |
+| `/run-deep-swe` | Score a model on the DeepSWE coding benchmark via OpenRouter |
+| `/anti-sleep` | Keep a Mac awake via `caffeinate` |
+| `/cyber-audit` | Read-only CVE/breach exposure audit of the local machine |
+| `/pi-custom-model` | Register a custom model slug in the Pi Agent |
+| `/setup-help` | Walk a user through any setup, one step at a time |
+| `/vps-server-management` | Manage the author's specific Hostinger VPS servers |
+| `/browser-harness` | Direct Chrome control via CDP for scraping/automation |
+| `/deep-research` | Run a deep research query via DeepAPI (requires an API key) |
+| `/deepapi` | Scrape web pages / send email via DeepAPI (requires an API key) |
+| `/pi-web-search` | Web search specifically for Pi Agents |
+| `/research-prompt` | Write a one-paragraph research brief for a human/AI researcher |
+| `/youtube-transcript` | Fetch a YouTube video transcript (DeepAPI + yt-dlp fallback) |
+| `/distribute-skill-to-all-agents` | Sync a skill across multiple personal agent skill folders |
+| `/effective-agent-skills` | General guide on how to write good Agent Skills/SKILL.md files |
+| `/folder-specific-claude-and-agents-md` | Generate a folder-scoped CLAUDE.md + AGENTS.md |
+| `/push-skill-to-github` | Push skill changes to a private skills GitHub repo |
+| `/brain-to-docs` | Extract a user's project vision into docs via Q&A |
+| `/copywriting` | Copywriting guidance/frameworks (references the original author by name) |
+| `/grill-me` | Interrogate the user Socratically to pressure-test a plan or design |
+| `/interview-style-doc-building` | Build a doc via back-and-forth interview |
+| `/read-all-adrs` | Read all ADRs in a project and summarize them |
+| `/short` | Compress the current answer — strip filler, cut length |
+| `/teach` | Teach the user a new skill or concept within the workspace |
