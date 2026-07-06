@@ -3,7 +3,7 @@
 Indie game development managed through **49 coordinated Claude Code subagents**.
 Each agent owns a specific domain, enforcing separation of concerns and quality gates.
 
-> **Stats**: 49 agents · 72 skills · 12 hooks · 8+ path-scoped rules · 39 document templates
+> **Stats**: 49 agents · 101 skills · 12 hooks · 8+ path-scoped rules · 39 document templates
 
 ---
 
@@ -39,7 +39,7 @@ CLAUDE.md                           # Master configuration (this file)
 .claude/
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # 49 agent definitions (.md + YAML frontmatter)
-  skills/                           # 72 slash commands (one subdirectory per skill)
+  skills/                           # 101 slash commands (one subdirectory per skill)
   hooks/                            # 12 bash hook scripts
   rules/                            # 11 path-scoped coding standards
   statusline.sh                     # Status line (context%, model, stage, epic breadcrumb)
@@ -97,7 +97,7 @@ Full agent directory and usage guidance: @.claude/docs/agent-roster.md
 
 ---
 
-## Slash Commands (72 Skills)
+## Slash Commands (101 Skills)
 
 **Onboarding & Navigation**
 `/start` `/help` `/project-stage-detect` `/setup-engine` `/adopt` `/init`
@@ -134,6 +134,9 @@ Full agent directory and usage guidance: @.claude/docs/agent-roster.md
 
 **Team Orchestration** (coordinate multiple agents on one feature)
 `/team-combat` `/team-narrative` `/team-ui` `/team-release` `/team-polish` `/team-audio` `/team-level` `/team-live-ops` `/team-qa`
+
+**General-Purpose Agent Utilities** (uncataloged — not part of the phase-gated pipeline; ported from [davidondrej/skills](https://github.com/davidondrej/skills))
+`/agent-self-scheduling` `/cmux` `/codex-goal-loop` `/delegating-to-agents` `/handoff` `/markdown-rendering` `/run-deep-swe` `/anti-sleep` `/cyber-audit` `/pi-custom-model` `/setup-help` `/vps-server-management` `/browser-harness` `/deep-research` `/deepapi` `/pi-web-search` `/research-prompt` `/youtube-transcript` `/distribute-skill-to-all-agents` `/effective-agent-skills` `/folder-specific-claude-and-agents-md` `/push-skill-to-github` `/brain-to-docs` `/copywriting` `/grill-me` `/interview-style-doc-building` `/read-all-adrs` `/short` `/teach`
 
 Full skill catalog: @.claude/docs/skills-reference.md
 
