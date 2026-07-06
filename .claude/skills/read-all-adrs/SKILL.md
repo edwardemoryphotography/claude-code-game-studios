@@ -5,11 +5,5 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep
 ---
 
-<!-- TODO: write the strong wording here -->
-
 Read EVERY single ADR `.md` file in this project's `docs/adr/` folder, start to
-finish.
-
-DO NOT BE A LAZY CUNT. ACTUALLY DO THIS.
-
-Read every single ADR file, for this project, in full.
+finish. Do not skip any file or skim — read each one completely.

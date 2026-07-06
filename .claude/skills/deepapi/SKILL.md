@@ -3,6 +3,7 @@ name: deepapi
 description: "Use DeepAPI for scraping and safe email with DEEPAPI_API_BASE_URL and DEEPAPI_API_KEY."
 user-invocable: true
 allowed-tools: Bash, Read
+version: b17ad5148ab7
 ---
 
 # DeepAPI
