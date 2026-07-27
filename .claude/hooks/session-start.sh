@@ -5,6 +5,10 @@
 
 # --- Remote environment setup (only runs on Claude Code on the web) ---
 if [ "${CLAUDE_CODE_REMOTE:-}" = "true" ]; then
+    # Run async so apt-get install doesn't block the session from starting.
+    # The 5-minute window is ample; installs typically finish in <30 seconds.
+    echo '{"async": true, "asyncTimeout": 300000}'
+
     echo "=== Remote Environment Setup ==="
 
     # Refresh package cache once if either tool is missing (required on fresh containers)
